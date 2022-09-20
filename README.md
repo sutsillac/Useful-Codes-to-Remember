@@ -1,6 +1,6 @@
 # Useful-Codes-to-Remember
 
-To make a count plot show values and percentages on the bars
+##To make a count plot show values and percentages on the bars
 
 ## Showing values on the count bars:
 plt.figure(figsize=(7,4),dpi=100)
