@@ -18,3 +18,12 @@ for p in ax.patches:
     x = p.get_x() + p.get_width()
     y = p.get_height()
     ax.annotate(percentage, (x, y),ha='right') ##'left','center'
+
+## pie plots
+fig, ax = plt.subplots(figsize=(7,15),dpi=80)
+explode = [0, 0.1]
+palette_color = sns.color_palette('dark')
+ax.set_title('', fontsize=20, fontname="Dejavu Sans")
+ax = df['colume'].value_counts(normalize=True).plot.pie(autopct='%1.0f%%', colors=palette_color, explode=explode)
+ax.set_ylabel("")
+plt.show()
