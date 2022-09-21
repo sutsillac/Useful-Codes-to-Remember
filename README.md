@@ -2,12 +2,18 @@
 
 ##To make a count plot show values and percentages on the bars
 
-## Showing values on the count bars:
+## Showing values on the count bars method 1:
 plt.figure(figsize=(7,4),dpi=100)
 ax = sns.countplot( x='colume name',
         data=df)
 for i in ax.containers:
     ax.bar_label(i,)
+
+## Showing Values on the count bars Method 2:
+ax = sns.countplot(x='colume name',data= emp_data,
+        order=df['colume name'].value_counts(ascending=False).index,orient='h')
+abs_values = df['colume name'].value_counts(ascending=False).values ##colume name refers to the same colume being plotted
+ax.bar_label(container=ax.containers[0], labels= abs_values)
     
 ## Showing Perccentages on the bars:
 total = float(len(df))
