@@ -64,3 +64,30 @@ plt.axvline(x=mean_val, color = 'cyan', linestyle='dashed', linewidth = 2)
 plt.axvline(x=med_val, color = 'red', linestyle='dashed', linewidth = 2)
 plt.axvline(x=mod_val, color = 'yellow', linestyle='dashed', linewidth = 2)
 plt.axvline(x=max_val, color = 'gray', linestyle='dashed', linewidth = 2)
+
+
+# Probability density function
+
+This is used to estimate distribution of data for the full population of the data. it shows if the distribution is normal or tending to either sides of the ditribution.
+def show_density(var_data):
+    from matplotlib import pyplot as plt
+
+    fig = plt.figure(figsize=(10,4))
+
+    #Plot density
+    var_data.plot.density()
+
+    #Add titles and labels
+    plt.title('Data Density')
+
+    #Show the mean, median, and mode
+    plt.axvline(x=var_data.mean(), color = 'cyan', linestyle='dashed', linewidth = 2)
+    plt.axvline(x=var_data.median(), color = 'red', linestyle='dashed', linewidth = 2)
+    plt.axvline(x=var_data.mode()[0], color = 'yellow', linestyle='dashed', linewidth = 2)
+
+    #Show the figure
+    plt.show()
+
+#Get the density of Grade
+col = df_students['Grade']
+show_density(col)
